@@ -3,14 +3,15 @@
 class MY_Controller extends CI_Controller
 {
 
-    private static $data;
+    private $data;
 
     function __construct()
     {
         parent::__construct();
         $this->load->helper('url');
         $this->load->helper('cookie');
-
+        $this->load->helper('common_helper');
+        
         $this->data['userInfo'] = $this->login_check();
     }
 

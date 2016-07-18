@@ -1,0 +1,11 @@
+@import "../base.css";
+div.form_div{
+    width: 759px;
+    margin:350px auto;
+}
+div.form_div form div.form-group input.form-control.input_money{
+    width: 120px;
+}
+div.form_div form div.form-group input.form-control.input_note{
+    width: 450px;
+}
