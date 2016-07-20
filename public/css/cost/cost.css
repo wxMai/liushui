@@ -13,7 +13,8 @@ div.form_div div.form-group label.control-label{
 
 ul.input_ul{
     list-style: none;
-    border: 1px solid black;
+    border: 1px solid rgb(115, 179, 229);
+    border-top: none;
     padding: 0px;
     position: absolute;
     z-index: 0;
@@ -39,6 +40,16 @@ ul.input_ul li.input_li{
 }
 ul.input_ul li.input_li:hover{
     cursor: pointer;
-    background-color: #46b8da;
+    /*background-color: #46b8da;*/
+    background-color: rgb(115, 179, 229);
     color: white;
+}
+ul.input_ul li input#add_cost_type{
+    width: 100px;
+    height: 35px;
+    margin:5px 5px;
+    display: inline-block;
+}
+ul.input_ul li input.btn-sm{
+    margin: 0px 5px;
 }

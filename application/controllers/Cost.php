@@ -13,11 +13,12 @@ class Cost extends MY_Controller{
             $this->load->view('user/login');
             return;
         }
+        $this->setData('costType_list',$this->Cost_model->get_costType_list());
         $this->setData('UserName_list',$this->Cost_model->get_UserName_list());
         $this->load->view('cost/add',$this->getData());
     }
     
-    public function lists(){
+    public function lists($mouth = 0){
         
     }
 
@@ -36,8 +37,17 @@ class Cost extends MY_Controller{
         }
     }
 
-    public function add_type(){
-        
+    public function add_cost_type(){
+        if(!$this->input->post('typeName')){
+            c_exit(0,'缺少类型名称');
+        }
+        $data = array(
+            'typeName' => $this->input->post('typeName'),
+            'CreateUserName' => $this->getData('userInfo')->UserName,
+            'CreateTime' => date('Y-m-d H:i:s',time())
+        );
+        $result = $this->Cost_model->add_cost_type($data);
+        $result?c_exit(1,$result):c_exit(0,'创建失败');
     }
 
     public function do_add_type(){

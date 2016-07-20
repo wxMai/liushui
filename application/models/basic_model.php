@@ -70,6 +70,7 @@ class basic_model extends CI_Model{
      * @param bool $where
      */
     public function get_list($field = false,$where = false){
+
         $this->check_table();
         $field && $this->db->select($field);
         $where && $this->db->where($where);
