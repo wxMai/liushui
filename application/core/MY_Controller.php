@@ -39,7 +39,7 @@ class MY_Controller extends CI_Controller
         return (isset($result)&&$result!='')?$result:false;
     }
 
-    public function setData($value,$array = false){
+    public function setData($array = false,$value = false){
         $result = &$this->data;
         if (is_array($array)) {
             foreach ($array as $item) {

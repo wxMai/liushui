@@ -1,11 +1,44 @@
 @import "../base.css";
+body{
+    background-color: #F7F7F7;
+}
 div.form_div{
-    width: 759px;
-    margin:350px auto;
+    width: 500px;
+    margin: 250px auto;
 }
-div.form_div form div.form-group input.form-control.input_money{
-    width: 120px;
+
+div.form_div div.form-group label.control-label{
+    /*font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;*/
 }
-div.form_div form div.form-group input.form-control.input_note{
-    width: 450px;
+
+ul.input_ul{
+    list-style: none;
+    border: 1px solid black;
+    padding: 0px;
+    position: absolute;
+    z-index: 0;
+    width: 411.5px;
+    background-color: white;
+    left: 15px;
+    opacity:0;
+    transition: top 0.4s ease-in-out, opacity 0.6s ease-in-out,z-index ;
+}
+ul.input_ul_hover{
+
+    opacity: 1;
+}
+ul.input_ul_z-index{
+    z-index: 1;
+}
+ul.input_ul li.input_li{
+    display: block;
+    height: 32px;
+    line-height: 32px;
+    padding: 0px 10px;
+    font-size: 15px;
+}
+ul.input_ul li.input_li:hover{
+    cursor: pointer;
+    background-color: #46b8da;
+    color: white;
 }

@@ -13,7 +13,8 @@ class Cost extends MY_Controller{
             $this->load->view('user/login');
             return;
         }
-        $this->load->view('cost/add');
+        $this->setData('UserName_list',$this->Cost_model->get_UserName_list());
+        $this->load->view('cost/add',$this->getData());
     }
     
     public function lists(){
@@ -28,7 +29,7 @@ class Cost extends MY_Controller{
         if(!$this->input->post() || !$this->input->post('money')){
             $this->load->view('cost/add');
         }
-        if($this->Cost_model->add_cost($this->input->post(),$this->getData('userInfo')->id)){
+        if($this->Cost_model->add_cost($this->input->post(),$this->getData('userInfo')->UserId)){
             exit('成功');
         }else{
             exit('失败');

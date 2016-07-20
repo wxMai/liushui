@@ -70,7 +70,7 @@ class User extends MY_Controller
     }
     
     public function check_login(){
-        if($this->getData()){
+        if($this->getData('userInfo')){
             redirect(site_url('cost/index'));
         }
     }
@@ -80,7 +80,7 @@ class User extends MY_Controller
         $userInfo = $this->User_model->get_userInfo_by_id($UserId);
         if($userInfo){
             $this->session->set_userdata('userInfo',$userInfo);
-            $this->setData($userInfo,'userInfo');
+            $this->setData('userInfo',$userInfo);
         }
     }
 

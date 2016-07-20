@@ -49,5 +49,14 @@ class User_model extends CI_Model{
             return false;
         }
     }
+    
+    public function get_UserName_list(){
+        $field = 'UserName';
+        $where = array(
+            'is_audit' => 'Y',
+            'is_superadmin' => 'N'
+        );
+        return $this->basic_model->set_table('user')->get_list($field,$where);
+    }
 
 }

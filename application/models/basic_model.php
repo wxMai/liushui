@@ -65,4 +65,16 @@ class basic_model extends CI_Model{
             exit('table is empty');
     }
 
+    /**
+     * @param bool $field
+     * @param bool $where
+     */
+    public function get_list($field = false,$where = false){
+        $this->check_table();
+        $field && $this->db->select($field);
+        $where && $this->db->where($where);
+        $query = $this->db->get($this->table);
+        return $query->result('array');
+    }
+
 }
