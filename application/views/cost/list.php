@@ -15,9 +15,6 @@
     <script src="<?php echo base_url(); ?>public/js/jquery-3.0.0.min.js"></script>
     <script src="<?php echo base_url(); ?>public/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url(); ?>public/js/validator.js"></script>
-    <!--    <link rel="stylesheet" type="text/css" href="-->
-    <?php //echo base_url(); ?><!--public/extra/jquery-editable-select.min.css">-->
-    <!--    <script src="--><?php //echo base_url(); ?><!--public/extra/jquery-editable-select.min.js"></script>-->
 </head>
 <body>
 <div class="container">
@@ -49,6 +46,19 @@
                     <td><a class="get_month_cost" data-month="<?= $key ?>">详细</a></td>
                 </tr>
             <?php endforeach; ?>
+            <tr>
+                <th colspan="<?= count($UserName_list) + 4 ?>">
+                    <?php
+                    $str = '总:' . $cost['total']['total'];
+                    foreach ($UserName_list as $value) {
+                        if (isset($cost['total'][$value['UserName']])) {
+                            $str = $str . '&nbsp;&nbsp;&nbsp;&nbsp;' . $value['UserName'].':' . $cost['total'][$value['UserName']];
+                        }
+                    }
+                    echo $str;
+                    ?>
+                </th>
+            </tr>
             </tbody>
         </table>
     </div>

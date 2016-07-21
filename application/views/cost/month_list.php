@@ -24,6 +24,19 @@
             <td><a class="get_day_cost" data-day="<?= $key ?>">详细</a></td>
         </tr>
     <?php endforeach; ?>
+    <tr>
+        <th colspan="<?= count($UserName_list) + 4 ?>">
+            <?php
+            $str = '总:' . $cost['total']['total'];
+            foreach ($UserName_list as $value) {
+                if (isset($cost['total'][$value['UserName']])) {
+                    $str = $str . '&nbsp;&nbsp;&nbsp;&nbsp;' . $value['UserName'].':' . $cost['total'][$value['UserName']];
+                }
+            }
+            echo $str;
+            ?>
+        </th>
+    </tr>
 </table>
 <script>
     $(function(){

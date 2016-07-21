@@ -30,6 +30,11 @@ class basic_model extends CI_Model{
         return $result->first_row();
     }
 
+    /**
+     * 设置操作的数据表
+     * @param string $table
+     * @return $this
+     */
     public function set_table($table = ''){
         $this->table = $table;
         return $this;
