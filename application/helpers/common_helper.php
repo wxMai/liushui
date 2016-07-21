@@ -114,3 +114,11 @@ function get_seaslog($level = 'info',$date = FALSE ,$path = FALSE){
     }
     return false;
 }
+
+function get_array_value($key,$arr,$default = 0){
+    if(isset($arr[$key])){
+        return $arr[$key];
+    }else{
+        return $default;
+    }
+}

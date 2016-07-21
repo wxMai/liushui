@@ -1,0 +1,21 @@
+@import "../base.css";
+body{
+    background-color: #F7F7F7;
+    width:100%;
+}
+div.container{
+    margin:0 auto;
+    width: 95%;
+}
+div.table_div{
+    margin:100px 1%;
+    width: 30%;
+    display: inline-flex;
+}
+div.table_div tr th,td{
+    text-align: center;
+}
+
+div.table_div tr td a{
+    cursor: pointer;
+}

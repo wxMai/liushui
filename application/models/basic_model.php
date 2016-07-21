@@ -2,6 +2,7 @@
 
 class basic_model extends CI_Model{
 
+    #操作的数据表
     private $table = '';
 
     public function __construct() {
@@ -68,12 +69,16 @@ class basic_model extends CI_Model{
     /**
      * @param bool $field
      * @param bool $where
+     * @param $join_list
      */
-    public function get_list($field = false,$where = false){
+    public function get_list($field = false,$where = false,$join_list = false){
 
         $this->check_table();
         $field && $this->db->select($field);
         $where && $this->db->where($where);
+        if($join_list){
+            $this->_join_table($join_list);
+        }
         $query = $this->db->get($this->table);
         return $query->result('array');
     }
