@@ -10,8 +10,15 @@ class Cost extends MY_Controller
         $this->check_login();
     }
 
+    /**
+     * 默认 - 页面
+     */
     public function index()
     {
+       $this->lists();
+    }
+
+    public function add(){
         if (!$this->getData('userInfo')) {
             $this->load->view('user/login');
             return;
@@ -86,7 +93,7 @@ class Cost extends MY_Controller
         return $result;
     }
 
-    public function add()
+    public function do_add()
     {
         if (!$this->getData('userInfo')) {
             $this->load->view('user/login');

@@ -7,8 +7,12 @@ div.container{
     margin:0 auto;
     width: 95%;
 }
+div.add_cost_div{
+    margin-top: 70px;
+    margin-left: 1%;
+}
 div.table_div{
-    margin:100px 1%;
+    margin:10px 1%;
     width: 30%;
     display: inline-flex;
 }

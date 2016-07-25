@@ -8,7 +8,7 @@
           href="<?php echo base_url(); ?>public/bootstrap_less/custom/bootstrap.less">
     <script type="text/javascript">
         less = {
-            env: "development" // 或者"production"/"development"
+            env: "production" // 或者"production"/"development"
         };
     </script>
     <script src="<?php echo base_url(); ?>public/bootstrap_less/custom/less-1.7.0.js"></script>

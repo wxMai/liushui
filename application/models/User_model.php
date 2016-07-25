@@ -78,7 +78,7 @@ class User_model extends CI_Model{
         $field = 'UserName';
         $where = array(
             'is_audit' => 'Y',
-            //'is_superadmin' => 'N'
+            'is_superadmin' => 'N'
         );
         return $this->basic_model->set_table('user')->get_list($field,$where);
     }

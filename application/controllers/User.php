@@ -95,7 +95,7 @@ class User extends MY_Controller
      */
     public function check_login(){
         if($this->getData('userInfo')){
-            redirect(site_url('cost/index'));
+            redirect(site_url('cost/lists'));
         }
     }
 

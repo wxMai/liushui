@@ -75,11 +75,20 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
+
+//tencent
 	'hostname' => '123.207.124.152',
-//	'hostname' => 'localhost',
 	'username' => 'root',
 	'password' => '',
 	'database' => 'liushui',
+
+//aliyun
+//	'hostname' => 'qdm227519558.my3w.com',
+//	'username' => 'qdm227519558',
+//	'password' => 'sql535400',
+//	'database' => 'qdm227519558_db',
+
+
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

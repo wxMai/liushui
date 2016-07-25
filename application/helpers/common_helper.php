@@ -122,3 +122,19 @@ function get_array_value($key,$arr,$default = 0){
         return $default;
     }
 }
+
+/**
+ * 在php中使用console记录功能
+ * @param $data
+ */
+function console_log($data)
+{
+    if (is_array($data) || is_object($data))
+    {
+        echo("<script>console.log('".json_encode($data)."');</script>");
+    }
+    else
+    {
+        echo("<script>console.log('".$data."');</script>");
+    }
+}  

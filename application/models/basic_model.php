@@ -1,6 +1,6 @@
 <?php
 
-class basic_model extends CI_Model{
+class Basic_model extends CI_Model{
 
     #操作的数据表
     private $table = '';

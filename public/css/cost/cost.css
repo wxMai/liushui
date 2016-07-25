@@ -3,8 +3,10 @@ body{
     background-color: #F7F7F7;
 }
 div.form_div{
-    width: 500px;
+    width: 26.04%;
     margin: 250px auto;
+    position: absolute;
+    left: 36.08%;
 }
 
 div.form_div div.form-group label.control-label{
@@ -53,3 +55,4 @@ ul.input_ul li input#add_cost_type{
 ul.input_ul li input.btn-sm{
     margin: 0px 5px;
 }
+

@@ -20,7 +20,8 @@ class Cost_model extends CI_Model{
         $data['time'] = isset($costInfo['time'])?$costInfo['time']:date('y-m-d H:i:s',time());
         $data['cost_type'] = isset($costInfo['type'])?$costInfo['type']:'默认';
         $data['note'] = isset($costInfo['note'])?$costInfo['note']:'';
-        return $this->db->insert('cost', $data);
+        return $this->basic_model->set_table('cost')->insert($data);
+//        return $this->db->insert('cost', $data);
     }
 
     /**

@@ -18,6 +18,9 @@
 </head>
 <body>
 <div class="container">
+    <div class="add_cost_div">
+        <a class="btn btn-info" href="<?=site_url(array('cost','add'))?>">添加花费记录</a>
+    </div>
     <div class="table_div">
         <table class="table table-bordered">
             <thead>
@@ -49,10 +52,10 @@
             <tr>
                 <th colspan="<?= count($UserName_list) + 4 ?>">
                     <?php
-                    $str = '总:' . $cost['total']['total'];
+                    $str = '总:' . get_array_value('total',$cost['total']);
                     foreach ($UserName_list as $value) {
                         if (isset($cost['total'][$value['UserName']])) {
-                            $str = $str . '&nbsp;&nbsp;&nbsp;&nbsp;' . $value['UserName'].':' . $cost['total'][$value['UserName']];
+                            $str = $str . '&nbsp;&nbsp;&nbsp;&nbsp;' . $value['UserName'] . ':' . $cost['total'][$value['UserName']];
                         }
                     }
                     echo $str;

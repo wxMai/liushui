@@ -4,6 +4,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>public/css/cost/cost.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>public/extra/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet/less" type="text/css"
           href="<?php echo base_url(); ?>public/bootstrap_less/custom/bootstrap.less">
     <script type="text/javascript">
@@ -14,10 +15,9 @@
     <script src="<?php echo base_url(); ?>public/bootstrap_less/custom/less-1.7.0.js"></script>
     <script src="<?php echo base_url(); ?>public/js/jquery-3.0.0.min.js"></script>
     <script src="<?php echo base_url(); ?>public/js/bootstrap.min.js"></script>
-<!--    <script src="--><?php //echo base_url(); ?><!--public/js/validator.js"></script>-->
-    <!--    <link rel="stylesheet" type="text/css" href="-->
-    <?php //echo base_url(); ?><!--public/extra/jquery-editable-select.min.css">-->
-    <!--    <script src="--><?php //echo base_url(); ?><!--public/extra/jquery-editable-select.min.js"></script>-->
+    <script src="<?php echo base_url(); ?>public/js/validator.js"></script>
+    <script src="<?php echo base_url(); ?>public/extra/bootstrap-datetimepicker.min.js"></script>
+    <script src="<?php echo base_url(); ?>public/extra/bootstrap-datetimepicker.fr.js"></script>
 </head>
 <body style="background-color: #F7F7F7;">
 <div class="form_div">
@@ -54,6 +54,12 @@
             <div class="help-block with-errors"></div>
         </div>
         <div class="form-group">
+            <label class="col-sm-2 control-label" for="Money">时间</label>
+            <div class="col-sm-10">
+                <input id="CreateTime" name="time" type="text" placeholder="时间" class="form-control input-createtime" value="<?=date('Y-m-d H:00',time())?>">
+            </div>
+        </div>
+        <div class="form-group">
             <label class="col-sm-2 control-label" for="Money">金额</label>
             <div class="col-sm-10">
                 <input id="Money" name="Money" type="text" placeholder="元" class="form-control input_money"
@@ -84,7 +90,7 @@
     function submit_form(){
         var form_data = $('#add_form').serializeArray();
         $.ajax({
-            url:"<?= site_url(array('cost', 'add')) ?>",
+            url:"<?= site_url(array('cost', 'do_add')) ?>",
             type:"POST",
             data: form_data,
             dataType: 'JSON',
@@ -95,6 +101,7 @@
                     window.location.href = "<?=site_url(array('cost','lists'))?>"
                 }else{
                     alert(data.msg)
+                    console('%o',data.msg)
                 }
             },
             error:function (XMLHttpRequest, textStatus, errorThrown) {
@@ -180,8 +187,17 @@
             }
             sessionStorage.setItem('select_'+id,value)
         }
+    })
 
-
+    //bootstrap 时间选择器
+    $('.input-createtime').datetimepicker({
+        format:'yyyy-mm-dd hh:00',
+        autoclose:true,
+        todayBtn:true,
+        todayHighlight:true,
+        language:'en',
+        pickerPosition:'bottom-right',
+        minView:'day'
     })
 </script>
 </html>
