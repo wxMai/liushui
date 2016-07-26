@@ -17,6 +17,7 @@
     <script src="<?php echo base_url(); ?>public/js/validator.js"></script>
 </head>
 <body>
+<?php $this->load->view('header');?>
 <div class="container">
     <div class="add_cost_div">
         <a class="btn btn-info" href="<?=site_url(array('cost','add'))?>">添加花费记录</a>

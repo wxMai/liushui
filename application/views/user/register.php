@@ -20,6 +20,7 @@
     <script src="<?php echo base_url(); ?>public/js/validator.js"></script>
 </head>
 <body>
+<?php $this->load->view('header');?>
 <div class="form_div">
     <form action="" method="post" class="form-inline" role="form"
           data-toggle="validator" id="register_form" onsubmit="">

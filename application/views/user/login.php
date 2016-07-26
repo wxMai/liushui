@@ -17,6 +17,8 @@
     <script src="<?php echo base_url(); ?>public/js/validator.js"></script>
 </head>
 <body>
+<?php $this->load->view('header');?>
+<div class="back_div" style="background-image: url('<?=base_url().'public/img/banner1.jpg'?>')"></div>
 <div class="form_div">
     <form action="<?= site_url(array('user', 'login')) ?>" method="post" class="form-inline" role="form"
           data-toggle="validator" id="login_form">

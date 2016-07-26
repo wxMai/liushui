@@ -20,6 +20,7 @@
     <script src="<?php echo base_url(); ?>public/extra/bootstrap-datetimepicker.fr.js"></script>
 </head>
 <body style="background-color: #F7F7F7;">
+<?php $this->load->view('header');?>
 <div class="form_div">
     <form action="<?= site_url(array('cost', 'add')) ?>" method="post" class="form-horizontal" id="add_form" role="form"
           data-toggle="validator" onsubmit="return false;">
