@@ -10,9 +10,14 @@ class Test extends MY_Controller
     }
 
     public function test(){
-        $test = new PHPExcel();
-        var_dump_it($test);
+        $this->load->view('user/test');
     }
+    
+    public function do_test(){
+        c_exit(0,$_FILES);
+    }
+
+
 
 
 }
